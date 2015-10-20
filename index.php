@@ -8,8 +8,14 @@
     <meta name="author" content="Marek S³owik">
     <title>Galeria zdjêæ</title>
 
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+	
 </head>
 <body>
 
+
+	
 </body>
 </html>
