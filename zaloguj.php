@@ -18,7 +18,7 @@ if(isset($_POST['btn-login']))
 	}
 	else
 	{
-		$error = "Wrong Details !";
+		$error = "Nieprawidłowy login lub hasło !";
 	}	
 }
 ?>
