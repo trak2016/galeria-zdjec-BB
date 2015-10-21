@@ -23,6 +23,7 @@ if(isset($_POST['btn-login']))
 }
 ?>
 <?php include('naglowek.php'); ?>
+<?php include('navbar.php'); ?>
 
 <div class="page-header">
 		<div class="form-container">

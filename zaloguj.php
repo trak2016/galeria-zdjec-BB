@@ -3,7 +3,7 @@ require_once 'dbconfig.php';
 
 if($user->is_loggedin()!="")
 {
-	$user->redirect('home.php');
+	$user->redirect('kokpit.php');
 }
 
 if(isset($_POST['btn-login']))
@@ -14,7 +14,7 @@ if(isset($_POST['btn-login']))
 		
 	if($user->login($uname,$umail,$upass))
 	{
-		$user->redirect('home.php');
+		$user->redirect('kokpit.php');
 	}
 	else
 	{
@@ -24,6 +24,7 @@ if(isset($_POST['btn-login']))
 ?>
 
 <?php include('naglowek.php'); ?>
+<?php include('navbar.php'); ?>
 <div class="page-header">
 		<div class="form-container">
         <form method="post">
