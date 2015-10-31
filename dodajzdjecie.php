@@ -8,7 +8,59 @@
 
 
 <?php 
+//sprawdzenie, czy jest wysłany formularz
+if(isset($_POST['send']))
+{
 
+//deklarowanie zmiennych
+$album= $_POST['album'];
+
+try
+      {
+		$stmt = $DB_con->prepare("SELECT MAX(id) FROM zdjecia;");
+		$stmt->execute();
+	     while ($row = $stmt->fetch()):
+			$najwiekszeID = $row[0]+1; 	
+		 endwhile;	
+	  }
+	catch(PDOException $e)
+	  {
+		echo $e->getMessage();
+	  }
+	  
+	
+//WYSYŁANIE PLIKU NA SERWER
+for( $i=0; $i<count($_FILES['plik']['size']); $i++ ){ 
+
+if( strstr($_FILES['plik']['type'][$i], 'image')!==false ){ 
+
+	//zmienia nazwę pliku, by zgadzały się z ID w bazie danych
+	$file = 'img/'.$najwiekszeID.'.jpg'; 
+	//wysyła plik na serwer
+	move_uploaded_file($_FILES['plik']['tmp_name'][$i], $file); 
+
+try
+   {
+	//dodaje wpis do bazy danych
+	$stmt = $DB_con->prepare("INSERT INTO zdjecia SET id_albumu = '$album';");
+	$stmt->execute();
+		echo '<div class="alert alert-success" role="alert">Zdjęcia zostały zapisane w bazie danych.</div>'; 
+	} 
+	catch(PDOException $e)
+	  {
+		echo '<div class="alert alert-danger" role="alert">Błąd przy zapisie zdjęć do bazy danych.</div>';
+		echo $e->getMessage();
+      }
+
+	//wyświetla komunikat o powodzeniu
+	echo '<div class="alert alert-success" role="alert">Zdjęcia zostały zapisane na serwerze.</div>';
+	//zwiększa ID dla kolejnych zdjęć w pętli
+	$najwiekszeID++;
+} 
+}
+
+
+}
 ?>
 
 
@@ -17,8 +69,8 @@
 
 <form action="dodajzdjecie.php" method="post" enctype="multipart/form-data">
 <div class="form-group">
-	<label for="kategoria">Wybierz album</label>
-    <select id="kategoria" name="kategoria" class="form-control">
+	<label for="album">Wybierz album</label>
+    <select id="album" name="album" class="form-control">
 <?php
 	try
       {
@@ -41,7 +93,7 @@
     <input type="file" id="pliki" multiple="multiple" name="plik[]">
 </div>
 
-  <button type="submit" name="wyslij" class="btn btn-primary">Dodaj zdjęcia</button>
+  <button type="submit" name="send" class="btn btn-primary">Dodaj zdjęcia</button>
 </form>
 
 </div>
