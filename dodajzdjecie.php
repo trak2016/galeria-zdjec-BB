@@ -39,7 +39,7 @@ if( strstr($_FILES['plik']['type'][$i], 'image')!==false ){
 try
    {
 	//dodaje wpis do bazy danych
-	$stmt = $DB_con->prepare("INSERT INTO zdjecia SET id_albumu = '$album';");
+	$stmt = $DB_con->prepare("INSERT INTO zdjecia SET id_albumu = '$album', id_usera = '$user_id';");
 	$stmt->execute();
 		echo '<div class="alert alert-success" role="alert">Zdjęcia zostały zapisane w bazie danych.</div>'; 
 	} 
