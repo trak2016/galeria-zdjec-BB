@@ -71,7 +71,7 @@ try
 <?php
 	try
       {
-		$stmt = $DB_con->prepare("SELECT id, nazwa FROM albumy;");
+		$stmt = $DB_con->prepare("SELECT id, nazwa FROM albumy where id_usera='$user_id';");
 		$stmt->execute();
 	     while ($tabela = $stmt->fetch()):
 			echo '<option value="'.$tabela['id'].'">'.$tabela['nazwa'].'</option>'; 	

@@ -18,7 +18,7 @@ if(isset($_POST['btn-addalbum']))
 	{
 	try
 			{
-				$stmt = $DB_con->prepare("INSERT INTO albumy SET nazwa = '$nazwa';");
+				$stmt = $DB_con->prepare("INSERT INTO albumy SET nazwa = '$nazwa', id_usera='$user_id';");
 				$stmt->execute();
 	            echo '<div class="alert alert-success" role="alert">Album "'.$nazwa.'" został pomyślnie dodany.</div>';    
 				

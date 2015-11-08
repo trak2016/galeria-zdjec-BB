@@ -54,7 +54,7 @@ if( !$album ){
 
 try
       {
-		$stmt = $DB_con->prepare("SELECT * FROM albumy;");
+		$stmt = $DB_con->prepare("SELECT * FROM albumy where id_usera='$user_id';");
 		$stmt->execute();
 	     while ($tabela = $stmt->fetch()):
 			echo '<tr>';
@@ -84,6 +84,22 @@ try
 <div class="col-md-12">
 
 <?php
+//USUWANIE ZDJECIA - WPROWADZENIE DO BAZY
+//sprawdzenie, czy jest zmienna
+$usun = $_GET['usun'];
+if( $usun ){
+	try
+		  {
+			$stmt = $DB_con->prepare("DELETE FROM zdjecia WHERE id = '$usun';");
+			$stmt->execute();
+			echo '<div class="alert alert-success" role="alert">Zdjęcie "'.$usun.'" zostało pomyślnie usunięte.</div>';  
+		  }
+		catch(PDOException $e)
+		  {
+			echo '<div class="alert alert-danger" role="alert">Błąd przy usuwaniu zdjęcia o identyfikatorze "'.$usun.'".</div>'; 
+			echo $e->getMessage();
+		  }
+}
 //ZMIANA OPISU ZDJECIA - WPROWADZENIE DO BAZY
 //sprawdzenie, czy jest zmienna
 $edytuj = $_POST['edytuj'];
