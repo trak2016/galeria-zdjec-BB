@@ -1,6 +1,3 @@
-<?php include('naglowek.php'); ?>
-<?php include('navbar2.php'); ?>
-<?php include('sesja.php'); ?>
 
 <div class="page-header">
 	<h1>Dodaj zdjęcia</h1>
@@ -67,7 +64,7 @@ try
 <div class="row">
 <div class="col-md-5">
 
-<form action="dodajzdjecie.php" method="post" enctype="multipart/form-data">
+<form action="kokpit.php?p=dodajzdjecie" method="post" enctype="multipart/form-data">
 <div class="form-group">
 	<label for="album">Wybierz album</label>
     <select id="album" name="album" class="form-control">

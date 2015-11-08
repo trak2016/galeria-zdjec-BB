@@ -13,10 +13,24 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 <?php include('navbar2.php'); ?>
 
 
- <div class="jumbotron">
-	<h1>Witaj!</h1>
-		<p>Znajdujesz się w panelu użytkownika?. Możesz tutaj dodawać/usuwać zdjęcia i kategorie. Wybierz pozycję z menu w prawym górnym rogu.</p>
- </div>
+<?php
+switch($_GET['p']){
+	case 'dodajzdjecie':
+		include('dodajzdjecie.php');
+	break;
+	case 'dodajalbum':
+		include('dodajalbum.php');
+	break;
+	case 'edytujzdjecie':
+		include('edytujzdjecie.php');
+	break;
+	case 'usunkategorie':
+		include('usunkategorie.php');
+	break;
+	default:
+		echo '<div class="jumbotron"><h1>Witaj!</h1><p>Znajdujesz się w panelu administratora. Możesz tutaj dodawać/usuwać zdjęcia i kategorie. Wybierz pozycję z menu w prawym górnym rogu.</p></div>'; 
+}
+?>
 
 
 </div> 
