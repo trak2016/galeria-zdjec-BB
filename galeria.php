@@ -70,7 +70,8 @@ try
   $stmt = $DB_con->prepare("SELECT * FROM zdjecia WHERE id_albumu = '$album';");
   $stmt->execute();
   while ($tabela = $stmt->fetch()):
-	echo '<div class="col-xs-6 col-md-3"><a href="img/'.$tabela['id'].'.jpg" class="thumbnail"><img src="img/'.$tabela['id'].'.jpg" alt="">&nbsp;'.$tabela['nazwa'].'</a></div>';
+	echo '<div class="col-xs-6 col-md-3"><a href="img/'.$tabela['id'].'.jpg" class="thumbnail"><img src="img/'.$tabela['id'].'.jpg" alt="">&nbsp;'.$tabela['nazwa'].'</a>
+	<button class="btn btn-default">0 <span class="glyphicon glyphicon-thumbs-up"></span></button></div>';
   endwhile;
 	   }
 	   catch(PDOException $e)

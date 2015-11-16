@@ -12,7 +12,7 @@
 <a class="navbar-brand" href="index.php">Galeria zdjęć</a>
 </div>
 
-<div id="navbar" class="navbar-collapse collapse">
+<div id="navbar" class="navbar-collapse collapse ">
 <ul class="nav navbar-nav navbar-right bg-inverse">
 	<li><a href="galeria.php">Zobacz galerię</a></li>
 	<li><a href="zaloguj.php">Zaloguj się</a></li>

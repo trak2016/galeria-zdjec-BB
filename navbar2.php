@@ -28,13 +28,7 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Edytuj <span class="caret"></span></a>
     	<ul class="dropdown-menu" role="menu">
     		<li><a href="kokpit.php?p=edytujzdjecie">Edytuj zdjęcia</a></li>
-    	</ul>
-    </li>
-    
-    <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuń <span class="caret"></span></a>
-    	<ul class="dropdown-menu" role="menu">
-    		<li><a href="#">Usuń kategorię</a></li>
+			<li><a href="kokpit.php?p=usunalbum">Edytuj album</a></li>
     	</ul>
     </li>
     

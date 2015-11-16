@@ -24,11 +24,11 @@ switch($_GET['p']){
 	case 'edytujzdjecie':
 		include('edytujzdjecie.php');
 	break;
-	case 'usunkategorie':
-		include('usunkategorie.php');
+	case 'usunalbum':
+		include('usunalbum.php');
 	break;
 	default:
-		echo '<div class="jumbotron"><h1>Witaj!</h1><p>Znajdujesz się w panelu użytkownika. Możesz tutaj dodawać/usuwać zdjęcia i kategorie. Wybierz pozycję z menu w prawym górnym rogu.</p></div>'; 
+		echo '<div class="jumbotron"><h1>Witaj!</h1><p>Znajdujesz się w panelu użytkownika. Możesz tutaj dodawać/usuwać zdjęcia i albumy. Wybierz pozycję z menu w prawym górnym rogu.</p></div>'; 
 }
 ?>
 
