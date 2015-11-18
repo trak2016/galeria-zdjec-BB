@@ -70,7 +70,8 @@ try
   $stmt = $DB_con->prepare("SELECT * FROM zdjecia WHERE id_albumu = '$album';");
   $stmt->execute();
   while ($tabela = $stmt->fetch()):
-	echo '<div class="col-xs-6 col-md-3"><a href="img/'.$tabela['id'].'.jpg" class="thumbnail"><img src="img/'.$tabela['id'].'.jpg" alt="">&nbsp;'.$tabela['nazwa'].'</a>
+	echo '<div class="col-xs-6 col-md-3" id="ramka"><a href="img/'.$tabela['id'].'.jpg" class="highslide" onclick="return hs.expand(this)" class="thumbnail" title="Zdjęcie: '.$tabela['nazwa'].'">
+	<img width="200" height="133" src="img/'.$tabela['id'].'.jpg" alt='.$tabela['nazwa'].'></a>
 	<button class="btn btn-default">0 <span class="glyphicon glyphicon-thumbs-up"></span></button></div>';
   endwhile;
 	   }

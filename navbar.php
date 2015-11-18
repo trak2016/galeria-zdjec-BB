@@ -14,7 +14,7 @@
 
 <div id="navbar" class="navbar-collapse collapse ">
 <ul class="nav navbar-nav navbar-right bg-inverse">
-	<li><a href="galeria.php">Zobacz galerię</a></li>
+	<li><a href="public_gallery.php">Zobacz galerię</a></li>
 	<li><a href="zaloguj.php">Zaloguj się</a></li>
 	<li><a href="zarejestruj.php">Zarejestruj się</a></li>
 </ul>
