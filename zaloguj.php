@@ -40,7 +40,7 @@ if(isset($_POST['btn-login']))
 			}
 			?>
             <div class="form-group">
-            	<input type="text" class="form-control" name="txt_uname_email" placeholder="Username or E mail ID" required />
+            	<input type="text" class="form-control" name="txt_uname_email" placeholder="Username or Email ID" required />
             </div>
             <div class="form-group">
             	<input type="password" class="form-control" name="txt_password" placeholder="Your Password" required />
